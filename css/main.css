@@ -1,0 +1,386 @@
+body { 
+	margin: 0; 
+	padding: 0;
+	font-family: 'Gotham_Pro', sans-serif;
+	overflow-x: hidden;
+}
+p{
+	margin:0px;
+	padding: 0px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family:'Quicksand', sans-serif;
+    font-size: 14px;
+    color: #3d3d3d;
+    -webkit-font-smoothing: antialiased;
+
+    background-color: #fff;
+}
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    
+}
+img {
+    max-width: 100%;
+    display: block;
+  }
+  a{
+      text-decoration: none;
+  }
+.wrap{
+    width: 100%;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/*main*/
+.main{
+    background: url(../images/Буковинський_державний_медичний_університет\ 2.png) center no-repeat fixed;
+    /*padding-bottom: 400px;*/
+	height: 100vh;
+}
+
+.main_title{
+    font-size: 48px;
+    font-weight: bold;
+    color: #00B370;
+    /*margin-top: 225px;*/
+	margin-top: 25vh;
+    margin-bottom: 40px;
+    width: 700px;
+}
+.main_btn{
+    /*background-image: linear-gradient(#00B370, #0FD98D);*/
+    background-color: #00B370;
+    color: #fff;
+    padding: 20px 110px;
+    font-size: 24px;
+    border-radius: 10px;
+    margin-left: 40px;
+}
+.main_btn:hover{
+   /* background-image: linear-gradient(#098959, #05BA76);*/
+   background-color: #098959;
+    transition: background-color .3s linear;
+}
+/*header*/
+.header{
+    color: #fff;
+    font-size: 14px;
+   /* padding-bottom: 25px;*/
+    border-bottom: 1px solid #838383;
+}
+.wrap_header{
+    display: flex;
+    justify-content: space-between;
+	position: relative;
+}
+/**/
+.nav_toggle{
+    width: 40px;
+    padding: 10px 0;
+    display: none;
+
+    font-size: 0;
+    color: transparent;
+
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    position: absolute;
+    top: 50%;
+    left: 20vw;
+    z-index: 1;
+}
+.nav_toggle_item {
+    display: block;
+    width: 100%;
+    height: 3px;
+
+    background-color: #fff;
+
+    position: absolute;
+    top: 0;
+    left: -120%;
+    
+
+    transition: background .2s linear;
+}
+.nav_toggle_item::before,
+.nav_toggle_item::after{
+    content: "";
+    width: 100%;
+    height: 3px;
+
+    background-color: #fff;
+
+    position: absolute;
+    left: 0;
+    z-index: 1;
+
+    transition: transform .2s linear;
+}
+.nav_toggle_item::before{
+    top: -8px;
+}
+.nav_toggle_item::after{
+    bottom: -8px;
+}
+.nav_toggle:active, .nav_toggle:hover, .nav_toggle:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+.nav_toggle.active .nav_toggle_item{
+    background: none;
+}
+.nav_toggle.active .nav_toggle_item::before{
+    transform-origin: left top;
+    transform: rotate(45deg) translate3d(0px, -8px, 0);
+}
+.nav_toggle.active .nav_toggle_item::after{
+    transform-origin: left bottom;
+    transform: rotate(-45deg) translate3d(0px, 8px, 0);
+}
+
+
+.header_logo{
+    margin-top: 20px;
+}
+
+.nav{
+    display: flex;
+    margin-top: 60px;
+
+}
+.count{
+    position: relative;
+}
+.count::before{
+    content: "3";
+    position: absolute;
+    top: -5px;
+    right: 20px;
+}
+.nav_item{
+    color: #fff;
+    height: 40px;
+    padding: 10px 30px;
+}
+.nav_item:hover{
+    /*color: #00B370;
+    font-weight: bold;*/
+    background-color: #00b370;
+    border-radius: 10px;
+    transition: background-color .3s linear;
+    transition: font-size .3s linear;
+    font-size: 18px;
+    
+}
+.nav_item:last-child{
+    margin-right: 0;
+}
+
+.header_lang{
+    list-style: none;
+    font-size: 18px;
+    margin-top: 47px;
+}
+.header_lang_item{
+    cursor: pointer;
+    padding: 5px;
+}
+.header_lang_item:hover{
+    background-color: #00b370;
+    border-radius: 10px;
+    transition: background-color .3s linear;
+    
+}
+.header_lang_item:first-child{
+    margin-bottom: 5px;
+}
+
+@media (max-width:992px) {
+	.nav{
+		flex-wrap: wrap;
+		margin-top: 20px;
+		justify-content: center;
+	}
+
+	.header_logo_img{
+		max-width: 150px;
+	}
+	.main_title{
+		font-size: 36px;
+	}
+	.main_btn{
+		padding: 20px 85px;
+	}
+}
+@media (max-width:665px){
+	.header_logo{
+		margin-left: 30vw;
+	}
+	.wrap_header{
+		justify-content: space-around;
+	}
+	.nav{
+		display: none;
+	}
+	.nav_toggle{
+		display: block;
+	}
+	.main_title{
+		font-size: 24px;
+		max-width: 100%;
+	}
+	.main_btn{
+		padding: 15px 60px;
+		margin-left: 0;
+	}
+}
+
+.burger_show{
+	display: block;
+    position: absolute;
+    background-color: #00B370;
+    border-radius: 10px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    opacity: .9;
+}
+/*news*/
+.news_title{
+    font-size: 36px;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    position: relative;
+}
+.news_title::after{
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 2px;
+    background-color: #00B370;
+    bottom: 0;
+    left: 0;
+}
+.news_item{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #E5E5E5;
+}
+.news_date{
+    color: #00B370;
+}
+.news_day{
+    font-size: 64px;
+    font-weight: bold;
+    margin-left: 6px;
+}
+.news_month{
+    font-size: 24px;
+}
+.news_info_title{
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+}
+.news_text{
+    max-width: 300px;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+.news_btn{
+    font-size: 18px;
+    color: #fff;
+    padding: 12px 63px 13px 63px;
+    background-image: linear-gradient(#00B370,#0FD98D);
+    border: 1px solid #00B370;
+    border-radius: 10px;
+}
+.news_button{
+    font-size: 18px;
+    color: #00B370;
+    padding: 13px 246px 14px 246px;
+    border: 1px solid #00B370;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+    transition: color .3s linear, background-color .3s linear;
+    margin-bottom: 60px;
+}
+.news_button:hover{
+    color: #fff;
+    background-color: #00B370;
+}
+
+
+@media(max-width:992px) {
+    .news_img{
+        width: 190px;
+    }
+    .news_info_title{
+        font-size: 24px;
+    }
+    .news_text{
+        font-size: 14px;
+    }
+}
+@media(max-width:665px) {
+    .news_item{
+        flex-wrap: wrap;
+       
+    }
+    .news_img{
+        order: -1;
+    }
+    .news_date{
+        order: -1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .news_info{
+        margin-top: 20px;
+    }
+    .news_button{
+        padding: 10px 100px;
+    }
+}
+
+.middle{
+    width: 100%;
+    height: 300px;
+    background: url(../images/polygons.png)  ;
+   
+}
+
+
+/*conf*/
+.conf_title{
+    font-size: 36px;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    position: relative;
+}
+.conf_title::after{
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 2px;
+    background-color: #00B370;
+    bottom: 0;
+    left: 0;
+}
